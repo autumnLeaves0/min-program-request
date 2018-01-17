@@ -1,4 +1,5 @@
 ﻿# min-program-request
+基于promise的小程序请求库，借鉴axios
 
 ## Example
 
@@ -102,9 +103,9 @@ These are the available config options for making requests. Only the `url` is re
 {
   url: String, //required
   baseURL: String,
-  //`method` default get  
+  //`method` default get
   //support 'options', 'get', 'head', 'post', 'put', 'delete', 'trace', 'connect'
-  method: String', 
+  method: String',
   data:	Object/String/ArrayBuffer,
   header: Object,
   dataType: String,
