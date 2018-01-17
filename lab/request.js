@@ -362,6 +362,10 @@ CancelToken.source = function source() {
   };
 };
 
+function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+}
+
 /**
  * @params{
  *   url:	String	是		开发者服务器接口地址
@@ -409,6 +413,7 @@ function createInstance(defaules) {
   instance.CancelToken = CancelToken;
   instance.defaults = context.defaults;
   instance.interceptors = context.interceptors;
+  instance.isCancel = isCancel;
 
   return instance;
 }

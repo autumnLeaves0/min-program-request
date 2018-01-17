@@ -1,5 +1,5 @@
 import Request from './request.js'
-import CancelToken from './cancel.js'
+import CancelToken, { isCancel } from './cancel.js'
 import defaults from './defaults.js'
 import { merge } from './util.js'
 
@@ -43,13 +43,14 @@ function createInstance(defaules) {
   let context = new Request(defaules)
   let instance = context.request.bind(context)
 
-  Request.methods.forEach((method)=>{
+  Request.methods.forEach((method) => {
     instance[method.toLowerCase()] = context[method.toLowerCase()].bind(context)
   })
 
   instance.CancelToken = CancelToken
   instance.defaults = context.defaults
   instance.interceptors = context.interceptors
+  instance.isCancel = isCancel
 
   return instance
 }
