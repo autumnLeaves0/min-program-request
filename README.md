@@ -105,7 +105,7 @@ These are the available config options for making requests. Only the `url` is re
   baseURL: String,
   //`method` default get
   //support 'options', 'get', 'head', 'post', 'put', 'delete', 'trace', 'connect'
-  method: String',
+  method: String,
   data:	Object/String/ArrayBuffer,
   header: Object,
   dataType: String,
